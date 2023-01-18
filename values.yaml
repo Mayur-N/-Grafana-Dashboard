@@ -1,0 +1,15 @@
+auth:
+    enabled: true
+    name: AzureAD
+    client_id: ""
+    client_secret: ""
+    tenant_id: ""
+    scopes: openid profile email
+    auth_url: https://login.microsoftonline.com/<tenant_id>/oauth2/authorize
+    token_url: https://login.microsoftonline.com/<tenant_id>/oauth2/token
+    api_url: https://graph.microsoft.com/
+    allowed_groups: 
+    allowed_domains:
+    allow_sign_up: true
+    auto_assign_org: true
+    auth_proxy_enabled: false

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+  namespace: monitoring
+data:
+  grafana.ini: |-
+    [auth.azuread]
+    enabled = {{ .Values.auth.enabled }}
+    name = {{ .Values.auth.name }}
+    client_id = {{ .Values.auth.client_id }}
+    client_secret = {{ .Values.auth.client_secret }}
+    tenant_id = {{ .Values.auth.tenant_id }}
+    scopes = {{ .Values.auth.scopes }}
+    auth_url = {{ .Values.auth.auth_url }}
+    token_url = {{ .Values.auth.token_url }}
+    api_url = {{ .Values.auth.api_url }}
+    allowed_groups = {{ .Values.auth.allowed_groups }}
+    allowed_domains = {{ .Values.auth.allowed_domains }}
+    allow_sign_up = {{ .Values.auth.allow_sign_up }}
+    auto_assign_org = {{ .Values.auth.auto_assign_org }}
+    auth_proxy_enabled = {{ .Values.auth.auth_proxy_enabled }}
